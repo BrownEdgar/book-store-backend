@@ -13,3 +13,15 @@ export const createBook = asyncHandler(async (req, res) => {
   res.json({ books })
 })
 
+export const deleteById = asyncHandler(async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  
+  const books = await BookService.deleteById(id)
+  res.json({ books })
+})
+
+export const getFilteredBooks = asyncHandler(async (req, res) => {
+  const books = await BookService.getFilteredBooks()
+  res.json(books)
+})

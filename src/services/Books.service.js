@@ -7,4 +7,12 @@ export const BookService = {
   createBook: async (body) => {
     return await BookRepo.createBook(body);
   },
+
+  deleteById: async (id) => {
+    return await BookRepo.deleteById(id);
+  },
+
+  getFilteredBooks: async () => {
+    return await BookRepo.getFilteredBooks();
+  },
 };
