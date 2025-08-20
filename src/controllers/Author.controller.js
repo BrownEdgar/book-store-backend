@@ -9,7 +9,11 @@ export const getAllAuthors = asyncHandler(async (req, res) => {
 })
 export const createAuthor = asyncHandler(async (req, res) => {
   const { body } = req;
-  const result = await AuthorService.createAuthor(body)
+  const data = {
+    ...body,
+    avatar: req.file.filename
+  }
+  const result = await AuthorService.createAuthor(data)
   res.json({ data: result })
 })
 

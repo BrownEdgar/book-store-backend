@@ -7,16 +7,20 @@ export const getAllBooks = asyncHandler(async (req, res) => {
   res.json(books)
 })
 export const createBook = asyncHandler(async (req, res) => {
-  const { data } = req;
 
-  const books = await BookService.createBook(data)
+  const book = {
+    ...req.data,
+    poster: req.file.filename
+  }
+
+  const books = await BookService.createBook(book)
   res.json({ books })
 })
 
 export const deleteById = asyncHandler(async (req, res) => {
   const { id } = req.params;
-  console.log(id);
-  
+
+
   const books = await BookService.deleteById(id)
   res.json({ books })
 })

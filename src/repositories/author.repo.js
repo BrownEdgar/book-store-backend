@@ -13,7 +13,6 @@ export const AuthorRepo = {
   },
   getAuthorId: async (aName) => {
     const author = Author.findOne({ name: aName })
-    console.log("author:", author);
     return author
   }
 }

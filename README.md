@@ -32,5 +32,8 @@ npm run dev
 | `npm run dev`   | Start app with nodemon (dev mode) |
 
 ```
-
+1. ['/get-authors] -> վերադարձնումէ բոլոր հեղինակների անունները
+2. ['/get-geanre] -> վերադարձնումէ բոլոր գրքերի չկրկնվող կատեգորիաները
+3. ['/get-geanre] -> վերադարձնումէ բոլոր գրքերի չկրկնվող ԺԱՆՐԸ + qanak
+4. ['/get-geanre] -> girq sargeluc naev stexcel hexinakin ete chka
 ```
