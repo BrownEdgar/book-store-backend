@@ -15,4 +15,12 @@ export const BookService = {
   getFilteredBooks: async () => {
     return await BookRepo.getFilteredBooks();
   },
+
+  getGenres: async () => {
+    return await BookRepo.getGenres();
+  },
+
+  getUnicGeanre: async () => {
+    return await BookRepo.getUnicGeanre();
+  },
 };

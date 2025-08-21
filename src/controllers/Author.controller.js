@@ -17,3 +17,7 @@ export const createAuthor = asyncHandler(async (req, res) => {
   res.json({ data: result })
 })
 
+export const getAuthorsName = asyncHandler(async (req, res) => {
+  const Authors = await AuthorService.getAuthorsName()
+  res.json(Authors)
+})

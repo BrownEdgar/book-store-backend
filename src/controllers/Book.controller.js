@@ -29,3 +29,13 @@ export const getFilteredBooks = asyncHandler(async (req, res) => {
   const books = await BookService.getFilteredBooks()
   res.json(books)
 })
+
+export const getGenres = asyncHandler(async (req, res) => {
+  const genres = await BookService.getGenres();
+  res.json(genres); // ["Fiction", "Non-Fiction"]
+});
+
+export const getUnicGeanre = asyncHandler(async (req, res) => {
+  const genres = await BookService.getUnicGeanre();
+  res.json(genres); // ["Fiction", "Non-Fiction"]
+});

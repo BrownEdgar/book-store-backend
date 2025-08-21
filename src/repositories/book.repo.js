@@ -19,5 +19,28 @@ export const BookRepo = {
   getFilteredBooks: async () => {
     const books = await Book.find().sort({ price: -1 })
     return books
+  },
+
+  getGenres: async () => {
+    const genres = await Book.distinct('genre');
+    return genres;
+  },
+
+  getUnicGeanre: async () => {
+    const genres = await Book.aggregate([
+      {
+        $group: {
+          _id: "$genre",
+          count: { $sum: 1 }
+        }
+      },
+      {
+        $project: {
+          geanre: "$_id",
+          count: 1
+        }
+      }
+    ])
+    return genres
   }
 }

@@ -11,4 +11,7 @@ export const AuthorService = {
   getAuthorId: async (body) => {
     return await AuthorRepo.getAuthorId(body);
   },
+  getAuthorsName: async () => {
+    return await AuthorRepo.getAuthorsName();
+  },
 };

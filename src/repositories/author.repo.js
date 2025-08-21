@@ -14,5 +14,9 @@ export const AuthorRepo = {
   getAuthorId: async (aName) => {
     const author = Author.findOne({ name: aName })
     return author
+  },
+  getAuthorsName: async () => {
+    const author = Author.find({}, {name : 1})
+    return author
   }
 }

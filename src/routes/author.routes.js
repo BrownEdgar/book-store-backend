@@ -1,6 +1,6 @@
 
 import express from "express"
-import { createAuthor, getAllAuthors } from '../controllers/Author.controller.js';
+import { createAuthor, getAllAuthors, getAuthorsName } from '../controllers/Author.controller.js';
 const router = express.Router();
 import multer from "multer";
 
@@ -18,6 +18,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage })
 router.get('/', getAllAuthors);
 router.post('/', upload.single('avatar'), createAuthor);
+router.get('/get-authors', getAuthorsName);
 
 export default router;
 
