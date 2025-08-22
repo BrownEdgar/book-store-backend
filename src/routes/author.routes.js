@@ -17,6 +17,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage: storage })
 router.get('/', getAllAuthors);
+router.get('/:id', getAllAuthors);
 router.post('/', upload.single('avatar'), createAuthor);
 router.get('/get-authors', getAuthorsName);
 

@@ -4,6 +4,9 @@ export const BookService = {
   getAllBooks: async () => {
     return await BookRepo.getAllBooks();
   },
+  getBook: async (id) => {
+    return await BookRepo.getBook(id);
+  },
   createBook: async (body) => {
     return await BookRepo.createBook(body);
   },
@@ -19,8 +22,9 @@ export const BookService = {
   getGenres: async () => {
     return await BookRepo.getGenres();
   },
-
-  getUnicGeanre: async () => {
-    return await BookRepo.getUnicGeanre();
+  getBooksByGeanres: async (genre) => {
+    return await BookRepo.getBooksByGeanres(genre);
   },
+
+
 };

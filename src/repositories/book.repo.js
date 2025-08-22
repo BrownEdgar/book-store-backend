@@ -5,6 +5,10 @@ export const BookRepo = {
     const books = await Book.find().populate('author')
     return books
   },
+  getBook: async (id) => {
+    const books = await Book.findOne({ _id: id }).populate('author')
+    return books
+  },
   createBook: async (body) => {
     const books = new Book(body)
     await books.save()
@@ -20,13 +24,12 @@ export const BookRepo = {
     const books = await Book.find().sort({ price: -1 })
     return books
   },
-
-  getGenres: async () => {
-    const genres = await Book.distinct('genre');
-    return genres;
+  getBooksByGeanres: async (genre) => {
+    const books = await Book.find({ genre }).sort({ genre: 1 })
+    return books
   },
 
-  getUnicGeanre: async () => {
+  getGenres: async () => {
     const genres = await Book.aggregate([
       {
         $group: {
@@ -39,8 +42,14 @@ export const BookRepo = {
           geanre: "$_id",
           count: 1
         }
+      },
+      {
+        $project: {
+          _id: 0
+        }
       }
     ])
     return genres
-  }
+  },
+
 }
