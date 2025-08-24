@@ -52,4 +52,9 @@ export const BookRepo = {
     return genres
   },
 
+  getSpecialBook: async (id) => {
+    const books = await Book.find({_id : id})
+    return books
+  },
+
 }

@@ -25,6 +25,8 @@ export const BookService = {
   getBooksByGeanres: async (genre) => {
     return await BookRepo.getBooksByGeanres(genre);
   },
-
+  getSpecialBook: async (id) => {
+    return await BookRepo.getSpecialBook(id);
+  },
 
 };

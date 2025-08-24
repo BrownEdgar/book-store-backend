@@ -21,3 +21,15 @@ export const getAuthorsName = asyncHandler(async (req, res) => {
   const Authors = await AuthorService.getAuthorsName()
   res.json(Authors)
 })
+
+export const getSpecialAuthor = asyncHandler(async (req, res) => {
+  const { id } = req.params
+  const Authors = await AuthorService.getSpecialAuthor(id)
+  res.json(Authors)
+})
+
+export const deleteById = asyncHandler(async (req, res) => {
+  const { id } = req.params
+  const Authors = await AuthorService.deleteById(id)
+  res.json(Authors)
+})

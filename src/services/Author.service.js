@@ -14,4 +14,10 @@ export const AuthorService = {
   getAuthorsName: async () => {
     return await AuthorRepo.getAuthorsName();
   },
+  getSpecialAuthor: async (id) => {
+    return await AuthorRepo.getSpecialAuthor(id);
+  },
+  deleteById: async (id) => {
+    return await AuthorRepo.deleteById(id);
+  },
 };

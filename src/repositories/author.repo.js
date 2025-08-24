@@ -18,5 +18,13 @@ export const AuthorRepo = {
   getAuthorsName: async () => {
     const author = Author.find({}, {name : 1})
     return author
+  },
+  getSpecialAuthor: async (id) => {
+    const author = Author.find({_id : id})
+    return author
+  },
+  deleteById: async (id) => {
+    const author = Author.deleteOne({_id : id})
+    return author
   }
 }
